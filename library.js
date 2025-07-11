@@ -53,8 +53,8 @@ closeBtn.addEventListener("click", () =>{
     dialog.close();
 })
 
-const submitBtn = document.querySelector("#submit")
-submitBtn.addEventListener('click', (e) => {
+const form = document.querySelector("#form")
+form.addEventListener('submit', (e) => {
     e.preventDefault();
     const title = document.querySelector("#title").value;
     const author = document.querySelector("#author").value;
@@ -63,11 +63,7 @@ submitBtn.addEventListener('click', (e) => {
 
     addBookTolibrary(title,author,pages,read);
     dialog.close();
-
-    document.querySelector("#title").value = '';
-    document.querySelector("#author").value = '';
-    document.querySelector("#pages").value = '';
-    document.querySelector("#read").checked = false;
+    form.reset();
 
 
 })
