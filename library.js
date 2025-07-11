@@ -30,6 +30,14 @@ function displayBooks(){
             <strong>Read:</strong> ${book.read ? "Yes" : "No"} <br>
             <strong>ID:</strong> ${book.id}
         `;
+        const toggleBtn = document.createElement("button");
+        toggleBtn.textContent = "Toggle Read";
+        toggleBtn.addEventListener("click", () => {
+            book.read = !book.read;       
+            displayBooks(); 
+
+        });
+        card.appendChild(toggleBtn);              
         inputContainer.appendChild(card);
     });
 }
